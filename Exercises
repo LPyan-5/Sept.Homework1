@@ -3,35 +3,31 @@ Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
 
 function isPrime(num){
     
-  if(num===Infinity||num===-Infinity||isNaN(num)||num<=0){
-      console.log('no');
-      return;
-  }
-  else
-      if(num===1){
-          console.log('no');
-          return;
-      }
-      else
-          if(num===2){
-              console.log('yes');
-              return;
-          }
-          else
-          if(num>1){
-              for(let i=2; i<num; i++){
-                  if(num%i===0){
-                      console.log('no');
-                      return;
-                  }
-              }
+if(!isFinite(num)||isNaN(num)||num<=1||typeof num!=='number'){
+    console.log('no');
+    return;
+}
 
-      }
+
+        if(num===2){
+            console.log('yes');
+            return;
+        }
+        else
+        {
+            for(let i=2; i<num/2; i++){
+                if(num%i===0){
+                    console.log('no');
+                    return;
+                }
+            }
+        
+    }
     
     console.log('yes');
     
 }
-isPrime(2);
+isPrime('a');
 isPrime(19);
 isPrime(25);
 
