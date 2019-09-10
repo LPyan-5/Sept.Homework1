@@ -72,32 +72,41 @@ rowSum([[-2,3],[1],[2,-5,6]]);
 
 
 //Exercise 4
-Print the following pattern:(square)
+Print the following pattern.
 
-function print(n){
-    let space=' ';
+function printRectangle(a,b){
+    if(a<=0||b<=0){
+        console.log('Please enter positives.');
+        return;
+    }
     let top='';
-    for(let i=1;i<=n;i++){
-        if(i===n){
+    let space=' ';
+    for(let i=1;i<=b;i++){
+        if(i===b){
             top+='*';
             }      
           else{
-            top+="*"+space;
+    top+="*"+space;
           }
     }
-    console.log(top);
-    
-    for (let i = 0; i<n-1; i++) {
-
-        let str = "*"+space.repeat(2*n-3)+"*"+space.repeat(i);
-        console.log(str);
+    let arr=[top];
+    for (let i = 0; i<a-1; i++) {
+        if(i===a-2){
+            arr.push(top);
+        }
+        else{
+        let str = "*"+space.repeat(2*b-3)+"*"+space.repeat(i);
+        arr.push(str);
+        }
        
            }
-
-       console.log(top);
- }
-print(5);
-print(7);
+        let s = '';
+        for(let key of arr){
+        s += key + '\n';
+        }
+        console.log(s);
+}
+printRectangle(5,8);
 
 
 //Exercise 5
