@@ -15,7 +15,7 @@ if(!isFinite(num)||isNaN(num)||num<=1||typeof num!=='number'){
         }
         else
         {
-            for(let i=2; i<num/2; i++){
+            for(let i=2; i<=num/2; i++){
                 if(num%i===0){
                     console.log('no');
                     return;
